@@ -10,7 +10,8 @@ function trivia(){
 					"Who was the first African American billionaire?",
 					"Who was the first African American Secretary of State?",
 					"Who said 'Nothing in all the world is more dangerous than sincere ignorance and conscientious stupidity.'?",
-					"In what year was slavery abolished in America?"]
+					"In what year was slavery abolished in America?",
+					"Who wrote 'What happens to a dream deferred? / Does it dry up / like a raisin in the sun?'"]
 
 	var answer = 	[
 						["Oprah Winfrey","Whoopi Goldberg","Ella Fitzgerald","Hattie McDaniel"],
@@ -18,6 +19,7 @@ function trivia(){
 						["Martin Luther King Jr.","Malcolm X","Frederick Douglass","Jesse Jackson"],
 						["Colin Powell","Condoleeza Rice","Jesse L. Brown","Frederick Douglass"],
 						["1865","1863","1881","1920"]
+						["Langston Hughes","Richard Wright","Toni Morrison","Phyllis Wheatley"]
 					]
 
 
