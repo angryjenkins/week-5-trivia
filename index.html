@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Black History Month Trivia!</title>
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://bootswatch.com/slate/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+<!-- Latest compiled and minified JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	>
+	<script src="assets/js/trivia.js"></script>
+</head>
+<body>
+<div class="jumbotron">
+	<div class="container">
+		<h1>Happy Black History Month!</h1>
+		<h2>Play, learn, enjoy.</h2>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 well text-center">
+			<p>You will have 30 seconds to answer each question.</p>
+			<p>To answer, click the appropriate response.</p>
+		</div>
+		<div class="col-md-12 well text-center">
+			Time Remaining: <span id="ticker"></span>
+		</div>
+		<div id="game" class="well text-center">
+			<div id="start">
+				<button class="btn btn-primary btn-lg" id="startButton">START!</button>
+			</div>
+			<div id="question">
+
+			</div>
+			<div id="choices">
+
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
