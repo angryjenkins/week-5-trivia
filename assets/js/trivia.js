@@ -12,7 +12,7 @@ $(document).ready(function(){
 	var	counter;
 	var counter2;
 
-	var questions = {
+	var questions = [
 	 		q1:{
 	 			question:'In what year did Martin Luther King deliver his famous "I Have a Dream" speech?',
 	 			correct: '1963',
@@ -72,13 +72,19 @@ $(document).ready(function(){
 	 			correct: 'Malcolm X',
 	 			choices: ['W.E.B DuBois','Frederick Douglass','Richard Wright']
 	 		}	
-	 	};
+	 	];
 
  	var currentQuestion = {
  		question:"",
  		correct:"",
  		choices:[]
  	};
+
+ 	var shuffle = function(a){
+		a.sort(function(){
+			return 0.5 - Math.random()
+			});
+		};
 
  	var timer = {
 		time:30,
@@ -122,11 +128,6 @@ $(document).ready(function(){
 
 		for(i=0;i<questions.length;i++){
 			
-			var shuffle = function(a){
-			a.sort(function(){
-				return 0.5 - Math.random()
-				});
-			};
 			var currentQuestion = {
 		 		question:questions.q[i-1].question,
 		 		correct:questions.q[i-1].correct,
