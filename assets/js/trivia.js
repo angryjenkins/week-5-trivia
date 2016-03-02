@@ -13,11 +13,9 @@ $(document).ready(function(){
 	var counter2;
 
 	var questions = [
-	 		q1:{
-	 			question:'In what year did Martin Luther King deliver his famous "I Have a Dream" speech?',
+	 		q1:{question:'In what year did Martin Luther King deliver his famous "I Have a Dream" speech?',
 	 			correct: '1963',
-	 			choices: ['1963','1961','1965','1969']
-	 		},
+	 			choices: ['1963','1961','1965','1969']},
 
 	 		q2:{
 	 			question:'Which of the original 13 colonies was the first to abolish slavery?',
@@ -150,9 +148,10 @@ $(document).ready(function(){
 	function trivia(){
 		timer.start();
 		var currentQuestion = questions[step];
+		
+		$('.question').show();
 
 		newQuestion();
-
 		step++;
 	};
 
