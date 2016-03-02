@@ -22,7 +22,7 @@
 </div>
 <div class="container">
 	<div class="row">
-		<div class="col-md-12 well text-center instructions">
+		<div class="col-md-12 well well-sm text-center instructions">
 			<p>You will have 30 seconds to answer each question.</p>
 			<p>To answer, click the appropriate response.</p>
 		</div>
@@ -36,11 +36,15 @@
 		<!-- QUESTION PAGE -->
 		<div class="col-md-12 text-center" id="triviaRound">
 			<h2 class="question"></h2>
-			<h3 class="ticker">15</h3>
-			<button id="option0"></button><br>
-			<button id="option1"></button><br>
-			<button id="option2"></button><br>
-			<button id="option3"></button><br>
+			<h3 class="ticker"></h3>
+			<div id="options">
+				<ul class="list-inline">
+					<li><button id="option0"></button></li>
+					<li><button id="option1"></button></li>
+					<li><button id="option2"></button></li>
+					<li><button id="option3"></button></li>
+				</ul>
+			</div>
 		</div>
 
 		<div class="col-md-12 text-center"  id="gameEnd">

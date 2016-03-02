@@ -3,11 +3,14 @@ $(document).ready(function(){
 
 	$('#triviaRound').hide();
 	$('#gameEnd').hide();
+	$('.question').hide();
+	$('#ticker').hide();
 
 	var step=0;
  	var	right=0;
 	var wrong=0;
 	var	counter;
+	var counter2;
 
 	var questions = {
 	 		one:{
@@ -72,16 +75,16 @@ $(document).ready(function(){
 	 	};
 
  	var currentQuestion = {
-	 		question:"",
-	 		correct:"",
-	 		choices:[]
-	 	};
+ 		question:"",
+ 		correct:"",
+ 		choices:[]
+ 	};
 
  	var timer = {
 		time:30,
 		reset:function(){
 		 	timer.time = 20;
-		    $(".ticker").html("15");
+		    $(".ticker").html("20");
 		},
 
 		start: function(){
@@ -96,7 +99,7 @@ $(document).ready(function(){
 
 		count: function(){
 		    timer.time--;
-		    $(".TimeLeft").html(timer.time);
+		    $(".ticker").html(timer.time);
 		},
 
 		timeUp: function(){
@@ -123,9 +126,9 @@ $(document).ready(function(){
 	};
 
 
-	var trivia = function(){
+	function trivia(){
 		timer.start();
-		currentQuestion = questions[step];
+		var currentQuestion = questions[step];
 
 		newQuestion();
 
@@ -134,12 +137,11 @@ $(document).ready(function(){
 
 	var newQuestion = function(){
 		$('#triviaRound').show();
-		$('.question').html(currentQuestion.Question);
-
+		$('.question').html(currentQuestion.question);
 		shuffle(currentQuestion.choices);
 
 		for(i=0;i<currentQuestion.choices.length;i++){
-			$("#option"+i).html(currentQuestion.choices[i]);	
+			$("button#option"+i).html(currentQuestion.choices[i]);	
 		}	
 	};
 
@@ -153,7 +155,7 @@ $(document).ready(function(){
 			$("#result").html("CORRECT!");
 			$(".startButton").html("Next Question");
 			$(".scoreboard").html("Right: "+right+"<br>Wrong: "+wrong);
-		} else if (x!=currentQuestion.correct && step<10){
+		} else if (b!=currentQuestion.correct && step<10){
 			wrong++;
 			timer.reset();
 			$("#startGame").show();
@@ -161,21 +163,22 @@ $(document).ready(function(){
 			$("#result").html("WRONG!");
 			$(".startButton").html("Next Question");
 			$(".scoreboard").html("Right: "+right+"<br>Wrong: "+wrong);
-		} else if (x==currentQuestion.Correct && step==10){
+		} else if (b==currentQuestion.correct && step==10){
 			timer.stop();
 			right++;
 			$("#triviaRound").hide();
 			$("#gameEnd").show();
 			$(".scoreboard").html("Right: "+right+"<step>Wrong: "+wrong);
-		} else if (x!=currentQuestion.Correct && step==10){
+		} else if (b!=currentQuestion.correct && step==10){
 			timer.stop();
 			right++;
 			$(".question").hide();
 			$("#gameEnd").show();
-			$(".scoreboard").html("Right: "+right+"<br>Wrong: "+wrong);}
+			$(".scoreboard").html("Right: "+right+"<br>Wrong: "+wrong);
+		} else {
+			//play on, playa!
 		}
-
-	$("#continuePlay").click(newQuestion());
+	};
 
 		//RESETS THE GAME
 	$("#playAgain").on("click", function(){
