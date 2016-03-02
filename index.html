@@ -11,7 +11,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	>
-	<script src="assets/js/trivia.js"></script>
+	
 </head>
 <body>
 <div class="jumbotron">
@@ -26,22 +26,29 @@
 			<p>You will have 30 seconds to answer each question.</p>
 			<p>To answer, click the appropriate response.</p>
 		</div>
-		<div class="container text-center startGame">
+
+		<div class="col-md-12 text-center" id="startGame">
 			<h2 id ="result"></h2>
-			<h2 id="score"></h2>
-			<button class="btn btn-primary btn-lg">Start the Quiz!</button>
+			<h2 class="scoreboard"></h2>
+			<button class="btn btn-primary btn-lg startButton">Start the Quiz!</button>
 		</div>
 
 		<!-- QUESTION PAGE -->
-		<div class="container text-center QuestionPage">
-			<h2 class="Question"></h2>
-			<h3 class="TimeLeft">15</h3>
-			<button class="choice0"></button><br>
-			<button class="choice1"></button><br>
-			<button class="choice2"></button><br>
-			<button class="choice3"></button><br>
+		<div class="col-md-12 text-center" id="triviaRound">
+			<h2 class="question"></h2>
+			<h3 class="ticker">15</h3>
+			<button id="option0"></button><br>
+			<button id="option1"></button><br>
+			<button id="option2"></button><br>
+			<button id="option3"></button><br>
+		</div>
+
+		<div class="col-md-12 text-center"  id="gameEnd">
+			<h2>Game Over.</h2>
+			<h2 class="scoreboard"></h2>
 		</div>
 	</div>
 </div>
+<script src="assets/js/trivia.js"></script>
 </body>
 </html>
