@@ -13,61 +13,61 @@ $(document).ready(function(){
 	var counter2;
 
 	var questions = {
-	 		one:{
+	 		q1:{
 	 			question:'In what year did Martin Luther King deliver his famous "I Have a Dream" speech?',
 	 			correct: '1963',
 	 			choices: ['1963','1961','1965','1969']
 	 		},
 
-	 		two:{
+	 		q2:{
 	 			question:'Which of the original 13 colonies was the first to abolish slavery?',
 	 			correct: 'Vermont',
 	 			choices: ['Vermont','New York','Delaware','Rhode Island']
 	 		},
 
-	 		three:{
+	 		q3:{
 	 			question:'Who was the first African American bilionaire?',
 	 			correct: 'Robert Johnson',
 	 			choices: ['Robert Johnson','Oprah Winfrey','Jay-Z','Whoopi Goldberg']
 	 		},
 
-	 		four:{
+	 		q4:{
 	 			question:'Who was the first African American published poet?',
 	 			correct: 'Phyllis Wheatley',
 	 			choices: ['Phyllis Wheatley','Langston Hughes','Toni Morrison','Maya Angelou']
 	 		},
 
-	 		five:{
+	 		q5:{
 	 			question:'Who was the first African American female to win a Grammy?',
 	 			correct: 'Ella Fitzgerald',
 	 			choices: ['Ella Fitzgerald','Langston Hughes','Delaware','Rhode Island']
 	 		},
 
-	 		six:{
+	 		q6:{
 	 			question:'Who was the first African American female to win an Oscar?',
 	 			correct: 'Hattie McDaniel',
 	 			choices: ['Hattie McDaniel','Josephine Baker','Lena Horne','Dorothy Dandridge']
 	 		},
 
-	 		seven:{
+	 		q7:{
 	 			question:'In what year did Martin Luther King deliver his famous "I Have a Dream" speech?',
 	 			correct: '1963',
 	 			choices: ['1963','1961','1965','1968']
 	 		},
 
-	 		eight:{
+	 		q8:{
 	 			question:'In what year was Malcolm X assassinated?',
 	 			correct: '1965',
 	 			choices: ['1961','1963','1968']
 	 		},
 
-	 		nine:{
+	 		q9:{
 	 			question:'Who said "Man, if you gotta ask [what jazz is] you%27ll never know."?',
 	 			correct: 'Louie Armstrong',
 	 			choices: ['Duke Ellington','Cab Calloway','BB King']
 	 		},
 
-	 		ten:{
+	 		q10:{
 	 			question:'Who said "A man who stands for nothing will fall for anything."?',
 	 			correct: 'Malcolm X',
 	 			choices: ['W.E.B DuBois','Frederick Douglass','Richard Wright']
@@ -115,15 +115,35 @@ $(document).ready(function(){
 	}
 
 	$(".startButton").click(function(){
-		trivia();
+		
+
 		$("#startGame").hide();
+		trivia();
+
+		for(i=0;i<questions.length;i++){
+			
+			var shuffle = function(a){
+			a.sort(function(){
+				return 0.5 - Math.random()
+				});
+			};
+			var currentQuestion = {
+		 		question:questions.q[i-1].question,
+		 		correct:questions.q[i-1].correct,
+		 		choices:shuffle(questions.q[i-1].choices)
+		 	};
+
+			$(".question").html();
+			$("#option"+i).html(questions.q[i-1].choices[i]);
+			$("#option"+i).html(questions.q[i-1].choices[i+1]);
+			$("#option"+i).html(questions.q[i-1].choices[i+2]);
+			$("#option"+i).html(questions.q[i-1].choices[i+3]);
+
+			return currentQuestion;
+		};
 	});
 
-	var shuffle = function(a){
-		a.sort(function(){
-			return 0.5 - Math.random()
-		});
-	};
+	
 
 
 	function trivia(){

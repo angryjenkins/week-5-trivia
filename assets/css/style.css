@@ -6,3 +6,8 @@ body{
 .container {
 	background-color: black;
 }
+
+#triviaRound, #startGame {
+	padding: 12px;
+	height: 400px;
+}
