@@ -22,23 +22,24 @@
 </div>
 <div class="container">
 	<div class="row">
-		<div class="col-md-12 well text-center">
+		<div class="col-md-12 well text-center instructions">
 			<p>You will have 30 seconds to answer each question.</p>
 			<p>To answer, click the appropriate response.</p>
 		</div>
-		<div class="col-md-12 well text-center">
-			Time Remaining: <span id="ticker"></span>
+		<div class="container text-center startGame">
+			<h2 id ="result"></h2>
+			<h2 id="score"></h2>
+			<button class="btn btn-primary btn-lg">Start the Quiz!</button>
 		</div>
-		<div id="game" class="well text-center">
-			<div id="start">
-				<button class="btn btn-primary btn-lg" id="startButton">START!</button>
-			</div>
-			<div id="question">
 
-			</div>
-			<div id="choices">
-
-			</div>
+		<!-- QUESTION PAGE -->
+		<div class="container text-center QuestionPage">
+			<h2 class="Question"></h2>
+			<h3 class="TimeLeft">15</h3>
+			<button class="choice0"></button><br>
+			<button class="choice1"></button><br>
+			<button class="choice2"></button><br>
+			<button class="choice3"></button><br>
 		</div>
 	</div>
 </div>
